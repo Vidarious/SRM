@@ -1,4 +1,4 @@
-# SharePoint Reference Material 
+# Basics / SharePoint Reference Material
 
 A SharePoint [C# / ASP.NET / JavaScript] reference guide for developers.
 
