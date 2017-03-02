@@ -9,7 +9,7 @@ A SharePoint [C# / ASP.NET / JavaScript] reference guide for developers.
 * [App vs. Solution vs. Web Part vs. Feature](#AppSolutionWebPartFeature) 
 * [To Dispose or Not?](#DisposeOrNot) 
  
-#### <a name="AppSolutionWebPartFeature"></a>App vs. Solution vs. Web Part vs. Feature
+### <a name="AppSolutionWebPartFeature"></a>App vs. Solution vs. Web Part vs. Feature
 
 These terms are thrown around a lot when talking about SharePoint and it can be confusing at first. For example, a Feature can enable or disable a Solution which can have one or more Web Part's. However, a Feature does not have to include a Solution.
 
@@ -49,7 +49,7 @@ App's come in 3 flavours:
 
 ---
 
-#### <a name="DisposeOrNot"></a>To Dispose or Not? 
+### <a name="DisposeOrNot"></a>To Dispose or Not? 
 
 Programming for SharePoint in C# comes with garbage collection. This means that you technically do not need to delete/unset/dispose of objects after you are finished with them. However, it is still _strongly_ recommended to do so.
 
