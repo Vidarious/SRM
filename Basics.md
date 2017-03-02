@@ -9,7 +9,7 @@ A SharePoint [C# / ASP.NET / JavaScript] reference guide for developers.
 * [App vs. Solution vs. Web Part vs. Feature](#AppSolutionWebPartFeature) 
 * [To Dispose or Not?](#DisposeOrNot) 
  
-### <a name="AppSolutionWebPartFeature"></a>App vs. Solution vs. Web Part vs. Feature
+### <a name="AppSolutionWebPartFeature"></a>App (Add-Ins) vs. Solution vs. Web Part vs. Feature
 
 These terms are thrown around a lot when talking about SharePoint and it can be confusing at first. For example, a Feature can enable or disable a Solution which can have one or more Web Part's. However, a Feature does not have to include a Solution.
 
@@ -18,6 +18,8 @@ These terms are thrown around a lot when talking about SharePoint and it can be 
 Solutions or Apps don't actually have to have a feature associated to them. They can be deployed to the SharePoint server (Farm, Site Collection, Site or Web Application) as is and will be automatically activated. However tieing a feature to your Solution or App is a good idea so you may easily turn it on or off without having to uninstall it completely.
 
 **Web Part**: Web Parts in SharePoint are everywhere. Apps & Solutions can both include Web Parts (if the developer wants). A App or Solution may even be entirely created to be a Web Part. This is just a component or piece of what a App or Solution can be.
+
+**NOTE**: SharePoint App's are also called SharePoint Add-In's - Because Microsoft likes to changes stuff all the time.
 
 **App vs. Solution**: This is the heart of the discussion. Up until SharePoint 2013 Microsoft's solution to creating little mini applications in SharePoint were called "Solutions". One type of Solution was called a "Sandbox Solution". These were special because they operated in their own little walled off sandbox, away from the SharePoint environment. This was a safe way to allowing a developer to create mini applications for SharePoint while protecting the SharePoint environment. Microsoft took the idea of a Sandbox Solution and evolved it into what is now called a "App" or "App Model". Both still exist but the Sandbox solution is basically deprecated in 2013 and it is recommended to create a App in place of a Sandbox Solution.
 
