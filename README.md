@@ -1,3 +1,3 @@
 # SharePoint Reference Material
 
-This repository is meant as a SharePoint [C3 / ASP.NET / JavaScript] development reference 
+This repository is meant as a SharePoint [C# / ASP.NET / JavaScript] development reference 
