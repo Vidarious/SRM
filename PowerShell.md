@@ -57,3 +57,16 @@ function Add-SharePoint
 	}
 }
 ```
+
+### <a name="AssignmentCollection"></a>Assigment Collection
+
+Similar to garbage collection, SP Assignment allows you to properly clean up unused objects to reduce/remove memory leaks.
+
+```cs
+$assignCollection = Start-SPAssignment;
+
+#Example Usage
+$siteObject = Get-SPWeb -AssignmentCollection $assignCollection -ErrorAction Stop $URL;
+
+Stop-SPAssignment $assignCollection;
+```
