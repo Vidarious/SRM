@@ -18,15 +18,42 @@ Everything and anything for SharePoint can be done via PowerShell. The interface
 In order to run SharePoint PowerShell commands you must initialize the SharePoint Snapin. The following script will check to ensure the SharePoint Snapin is not already loaded, then load it and return a acknowledgement.
 
 ```cs
-$SPAddin = "Microsoft.SharePoint.PowerShell"
-
-If (!(Get-PSSnapin | Where-Object –Property “Name” -eq –Value $SPAddin)) 
+function Add-SharePoint
 {
-  Add-PSSnapin $SPAddin
-  Write-Host "`nSharePoint Snapin has been initialized .." -ForegroundColor "Green"
-}
-else
-{
-  Write-Host "`nSharePoint Snapin has already been initialized .." -ForegroundColor "Green"
+	Write-Host "`nChecking for SharePoint Snapin ..." -ForegroundColor Cyan -NoNewline;
+	
+	#Assign module name.
+	$snapinName = "Microsoft.SharePoint.PowerShell";
+	
+	#Check if Snapin is loaded.
+	if (Test-ScriptSnapin $snapinName)
+	{
+		Write-Host " Already Loaded!" -ForegroundColor Green;
+	}
+	else
+	{
+		Write-Host " Not Loaded!" -ForegroundColor Red;
+		
+		Write-Host "`nAttempting to load Snapin ..." -ForegroundColor Cyan -NoNewline;
+		
+		#Try and load the Snapin.
+		if (Add-ScriptSnapin $snapinName)
+		{
+			Write-Host " Successfully Loaded!" -ForegroundColor Green;
+		}
+		else
+		{
+			Write-Host " Failed to Load!" -ForegroundColor Red;
+			
+			Write-Host "`nEnsure the following conditions have been met ..." -ForegroundColor Red;
+			Write-Host "1. SharePoint is installed on this machine." -ForegroundColor Red;
+			Write-Host "2. PowerShell is being ran as an Administrator." -ForegroundColor Red;
+			Write-Host "3. PowerShell is being ran as the 64x bit edition." -ForegroundColor Red;
+			
+			Write-Host "`nThis application will now exit ...";
+			
+			Close-Application;
+		}
+	}
 }
 ```
